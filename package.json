@@ -12,5 +12,8 @@
     "donation"
   ],
   "author": "C. Cyprien (CheckkDaHustle)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
