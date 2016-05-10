@@ -1,0 +1,16 @@
+{
+  "name": "fob",
+  "version": "0.0.1",
+  "description": "Charity Application for donations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "charity",
+    "donation"
+  ],
+  "author": "C. Cyprien (CheckkDaHustle)",
+  "license": "MIT"
+}
