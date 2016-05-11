@@ -12,4 +12,4 @@ gulp.task('server', function () {
 
 gulp.task('default', ['server'], function () {
 		console.log('Server is ON');
-})
+});
