@@ -2,7 +2,7 @@
 <html lang="en" ng-app="fobApp">
 <head>
   <meta charset="UTF-8">
-  <title>Angular Registration</title>
+  <title>FOB Registration</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css"/>
@@ -29,7 +29,10 @@
 </head>
 
 <body>
-  <header>Navagation Goes Here</header>
+  <header>
+    <nav class="cf" ng-include="'views/nav.html'"></nav>
+
+  </header>
 
   <div class="page">
     <main class="cf" ng-view>
