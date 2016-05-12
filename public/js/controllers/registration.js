@@ -1,3 +1,10 @@
 fobApp.controller('RegistrationController', ['$scope', function ($scope) {
-	$scope.message = 'Welcome to our  FOB App!';
-}])
+
+	$scope.login = function(){
+		$scope.message = "Welcome " + $scope.user.email;
+	};
+
+	$scope.register = function(){
+		$scope.message = "Welcome " + $scope.user.fname;
+	}
+}]);
