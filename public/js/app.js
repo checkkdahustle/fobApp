@@ -12,8 +12,8 @@ fobApp.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: 'views/register.html',
 			controller: 'RegistrationController'
 		}).
-		when('/sccuess', {
-			templateUrl: 'views/sccuess.html',
+		when('/success', {
+			templateUrl: 'views/success.html',
 			controller: 'RegistrationController'
 		}).
 		otherwise({
