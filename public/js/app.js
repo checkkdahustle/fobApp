@@ -1,5 +1,6 @@
 // dependencies for the modules will go inside of the array for it to work.
-var fobApp = angular.module('fobApp' , ['ngRoute']);
+var fobApp = angular.module('fobApp' , ['ngRoute','firebase'])
+.constant('FIREBASE_URL', 'https://fobapp.firebaseio.com/');
 
 // Create an Controller, dependencies is inside of the arrary.nremember, Scope give us access to the view or template.
 fobApp.config(['$routeProvider', function ($routeProvider) {
