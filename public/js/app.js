@@ -14,7 +14,7 @@ fobApp.config(['$routeProvider', function ($routeProvider) {
 		}).
 		when('/success', {
 			templateUrl: 'views/success.html',
-			controller: 'RegistrationController'
+			controller: 'SuccessController'
 		}).
 		otherwise({
 			redirectTo: '/login'
