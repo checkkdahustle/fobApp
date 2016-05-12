@@ -14,10 +14,10 @@ fobApp.config(['$routeProvider', function ($routeProvider) {
 		}).
 		when('/sccuess', {
 			templateUrl: 'views/sccuess.html',
-			controller: 'SccuessController'
+			controller: 'RegistrationController'
 		}).
 		otherwise({
-			redirectTo: 'login'
+			redirectTo: '/login'
 		});
 
 }]);
