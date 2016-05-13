@@ -13,6 +13,18 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', 'FIREBASE_URL',
 					email: user.email,
 					password: user.password
 				}).then(function (rUser) {
+
+					var rRef = new Firebase(FIREBASE_URL + 'users')
+					.child(rUser.uid).set({
+						date: Firebase.ServerValue.TIMESTAMP,
+						regUser: rUser.uid,
+						firstName: user.fname,
+						lastName: user.lname,
+						email: user.email
+					}); // users and or donators info stored in DB.
+
+
+
 					$rootScope.message = "Hello " + user.fname + ", Thank you for registering.";
 				}).catch(function (error) {
 					$rootScope.message = error.message;
