@@ -1,11 +1,18 @@
-fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', 'FIREBASE_URL', function ($rootScope, $firebaseAuth, FIREBASE_URL) {
+fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$location' 'FIREBASE_URL', function ($rootScope, $firebaseAuth, FIREBASE_URL) {
 
 		var ref = new Firebase(FIREBASE_URL);
 		var auth = $firebaseAuth(ref);
 
 		return{
 			login: function (user) {
-				$rootScope.message = "Welcome " + $scope.user.email;
+				auth.$authWithPassword({
+					email: user.email,
+					password: user.password
+				}).then(function(rUser) {
+					$location.path('/success');
+				}).catch(function(error) {
+					$rootScope.message = error.message;
+				});
 			}, // close login return
 
 			register: function(user) {
@@ -22,8 +29,6 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', 'FIREBASE_URL',
 						lastName: user.lname,
 						email: user.email
 					}); // users and or donators info stored in DB.
-
-
 
 					$rootScope.message = "Hello " + user.fname + ", Thank you for registering.";
 				}).catch(function (error) {
