@@ -28,8 +28,11 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 
 			logout: function () {
 				return auth.$unauth();
-			
 			}, // logout
+
+			requireAuth: function() {
+				return auth.$requireAuth();
+			}, // require Authentication
 
 			register: function(user) {
 				auth.$createUser({
