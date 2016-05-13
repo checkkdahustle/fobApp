@@ -4,6 +4,10 @@ fobApp.controller('RegistrationController', ['$scope', 'Authentication', functio
 		Authentication.login($scope.user);
 	}; // close Login from Authentication
 
+	$scope.logout = function(){
+		Authentication.logout();
+	}; // close logout from Authentication
+
 	$scope.register = function(){
 		Authentication.register($scope.user);
 	}; // close register from Authentication
