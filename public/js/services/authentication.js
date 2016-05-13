@@ -14,7 +14,7 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 			}
 		})
 
-		return{
+		var thisObject = {
 			login: function (user) {
 				auth.$authWithPassword({
 					email: user.email,
@@ -49,11 +49,14 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 						email: user.email
 					}); // users and or donators info stored in DB.
 
-					$rootScope.message = "Hello " + user.fname + ", Thank you for registering.";
+					thisObject.login(user);
+					
 				}).catch(function (error) {
 					$rootScope.message = error.message;
 				}); // close createUser auth function
 			} // close register return
 		}; // close return function
+
+		return thisObject;
 
 	}]); // close factory
