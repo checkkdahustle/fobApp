@@ -1,4 +1,4 @@
-var fobApp = angular.module('fobApp' , ['ngRoute','firebase'])
+var fobApp = angular.module('fobApp' , ['ngRoute','firebase', 'ngProgress'])
 .constant('FIREBASE_URL', 'https://fobapp.firebaseio.com/'); // dependencies for the modules will go inside of the array for it to work.
 
 fobApp.run(['$rootScope', '$location', function($rootScope, $location) {
