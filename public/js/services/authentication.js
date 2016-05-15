@@ -20,7 +20,7 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 					email: user.email,
 					password: user.password
 				}).then(function(rUser) {
-					$location.path('/success');
+					$location.path('/donators');
 				}).catch(function(error) {
 					$rootScope.message = error.message;
 				});
@@ -50,7 +50,7 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 					}); // users and or donators info stored in DB.
 
 					thisObject.login(user);
-					
+
 				}).catch(function (error) {
 					$rootScope.message = error.message;
 				}); // close createUser auth function
