@@ -6,7 +6,6 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 		auth.$onAuth(function(authUser) {
 			if (authUser) {
 				var userRef = new Firebase(FIREBASE_URL + 'users/' + authUser.uid);
-
 				var userObj = $firebaseObject(userRef);
 				$rootScope.currentUser = userObj;
 			}else {
