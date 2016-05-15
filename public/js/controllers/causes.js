@@ -8,7 +8,7 @@ fobApp.controller('CausesController', ['$scope', '$rootScope', '$firebaseAuth', 
 			var causesRef = new Firebase(FIREBASE_URL + 'users/' + $rootScope.currentUser.$id + '/causes');
 			var causesInfo = $firebaseArray(causesRef);
 
-			$scope.addcause = function() {
+			$scope.addCause = function() {
 				causesInfo.$add({
 					name: $scope.causeName,
 					date: Firebase.ServerValue.TIMESTAMP
