@@ -1,5 +1,5 @@
 var fobApp = angular.module('fobApp' , ['ngRoute','firebase', 'ngProgress'])
-.constant('FIREBASE_URL', 'https://fobapp.firebaseio.com/'); // dependencies for the modules will go inside of the array for it to work.
+.constant('FIREBASE_URL', 'https://foblivemeeting.firebaseio.com/'); // dependencies for the modules will go inside of the array for it to work.
 
 fobApp.run(['$rootScope', '$location', function($rootScope, $location) {
 	$rootScope.$on('$routeChangeError', function(event, next, previous, error) {
@@ -20,8 +20,8 @@ fobApp.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: 'views/register.html',
 			controller: 'RegistrationController'
 		}).
-		when('/success', {
-			templateUrl: 'views/success.html',
+		when('/donators', {
+			templateUrl: 'views/donators.html',
 			controller: 'SuccessController',
 			resolve: {
 				currentAuth: function (Authentication) {
