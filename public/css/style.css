@@ -530,15 +530,15 @@ nav li a:hover {
   vertical-align: center;
 }
 
-.meetings {
+.causes {
   padding-top: 10px;
 }
 
-.meetings h2 {
+.causes h2 {
   padding-bottom: 5px;
 }
 
-.meetings .meeting {
+.causes .meeting {
   display: inline-block;
   padding: 10px 20px 10px 15px;
   margin: 3px 10px;
@@ -548,17 +548,17 @@ nav li a:hover {
 
 }
 
-.meetings .meeting .btn {
+.causes .meeting .btn {
   margin-right: 4px;
   padding: 1px 8px;
 }
 
-.meetings .meeting .text {
+.causes .meeting .text {
   display: inline-block;
   vertical-align: bottom;
 }
 
-.meetings .meeting .text a{
+.causes .meeting .text a{
   text-decoration: none;
 }
 
