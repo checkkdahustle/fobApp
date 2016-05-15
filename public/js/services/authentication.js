@@ -20,7 +20,7 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 					email: user.email,
 					password: user.password
 				}).then(function(rUser) {
-					$location.path('/donators');
+					$location.path('/causes');
 				}).catch(function(error) {
 					$rootScope.message = error.message;
 				});
