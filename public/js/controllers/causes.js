@@ -1,3 +1,3 @@
-fobApp.controller('DonatorsController', ['$scope', function ($scope) {
+fobApp.controller('CausesController', ['$scope', function ($scope) {
 	// $scope.message = 'Success!';
 }]);

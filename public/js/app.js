@@ -20,9 +20,9 @@ fobApp.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: 'views/register.html',
 			controller: 'RegistrationController'
 		}).
-		when('/donators', {
-			templateUrl: 'views/donators.html',
-			controller: 'DonatorsController',
+		when('/causes', {
+			templateUrl: 'views/causes.html',
+			controller: 'CausesController',
 			resolve: {
 				currentAuth: function (Authentication) {
 					return Authentication.requireAuth();
