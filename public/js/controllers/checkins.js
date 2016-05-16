@@ -11,6 +11,7 @@ fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$location', '$
 	$scope.order = "firstName";
 	$scope.direction = null;
 	$scope.query = '';
+	$scope.recordId = '';
 
 	$scope.addCheckin = function() {
 		var checkinsInfo = $firebaseArray(ref);
@@ -33,6 +34,11 @@ fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$location', '$
 		var record = $firebaseObject(refDel);
 		record.$remove(id);
 	};// deleteCheckin
+
+	$scope.pickRandom = function() {
+		var whichRecord = Math.round(Math.random()* (checkinsList.length - 1)); // pick a random number from 0 to checkinsList -1.
+		$scope.recordId = checkinsList.$keyAt(whichRecord);
+	}// Function that picks a random users.
 
 
 }]); // close CheckinsController.
