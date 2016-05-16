@@ -8,6 +8,10 @@ fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$location', '$
 	var checkinsList = $firebaseArray(ref);
 	$scope.checkins = checkinsList;
 
+	$scope.order = "firstName";
+	$scope.direction = null;
+	$scope.query = '';
+
 	$scope.addCheckin = function() {
 		var checkinsInfo = $firebaseArray(ref);
 		var myData = {
