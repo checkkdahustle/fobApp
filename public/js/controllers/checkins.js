@@ -24,5 +24,11 @@ fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$location', '$
 
 	}; // close 'Add Checkin' function.
 
+	$scope.deleteCheckin = function(id) {
+		var refDel = new Firebase(FIREBASE_URL + 'users/' + $scope.whichuser + '/causes/' + $scope.whichcause + '/checkins/' + id);
+		var record = $firebaseObject(refDel);
+		record.$remove(id);
+	};// deleteCheckin
+
 
 }]); // close CheckinsController.
