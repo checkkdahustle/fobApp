@@ -538,7 +538,7 @@ nav li a:hover {
   padding-bottom: 5px;
 }
 
-.causes .meeting {
+.causes .cause {
   display: inline-block;
   padding: 10px 20px 10px 15px;
   margin: 3px 10px;
@@ -548,17 +548,17 @@ nav li a:hover {
 
 }
 
-.causes .meeting .btn {
+.causes .cause .btn {
   margin-right: 4px;
   padding: 1px 8px;
 }
 
-.causes .meeting .text {
+.causes .cause .text {
   display: inline-block;
   vertical-align: bottom;
 }
 
-.causes .meeting .text a{
+.causes .cause .text a{
   text-decoration: none;
 }
 
