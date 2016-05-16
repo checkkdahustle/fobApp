@@ -1,8 +1,12 @@
-fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$firebaseObject', '$firebaseArray', '$routeParams', 'FIREBASE_URL', function ($scope, $rootScope, $firebaseObject, $firebaseArray, $routeParams, FIREBASE_URL) {
+fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$location', '$firebaseObject', '$firebaseArray', '$routeParams', 'FIREBASE_URL', function ($scope, $rootScope, $location, $firebaseObject, $firebaseArray, $routeParams, FIREBASE_URL) {
+
 	$scope.whichcause = $routeParams.mId;
 	$scope.whichuser = $routeParams.uId;
 
 	var ref = new Firebase(FIREBASE_URL + 'users/' + $scope.whichuser + '/causes/' + $scope.whichcause + '/checkins' );
+
+	var checkinsList = $firebaseArray(ref);
+	$scope.checkins = checkinsList;
 
 	$scope.addCheckin = function() {
 		var checkinsInfo = $firebaseArray(ref);
@@ -13,7 +17,10 @@ fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$firebaseObjec
 			date: Firebase.ServerValue.TIMESTAMP
 		}; // close 'myData' varaible.
 
-		checkinsInfo.$add(myData);
+		checkinsInfo.$add(myData).then(function() {
+			$location.path('/checkins/' + $scope.whichuser + '/' + $scope.whichcause + '/checkinsList');
+
+		});// Promise to redirect after checkin.(Send data to Firebase)
 
 	}; // close 'Add Checkin' function.
 
