@@ -12,7 +12,14 @@
     </div>
 
     <button type="submit" class="btn" ng-disabled="causeForm.$invalid">+</button>
-
   </form>
 
-</div><!-- causes cf -->
+  <h2>Your Causes</h2>
+  <div class="cause" ng-repeat="(key, cause) in causes">
+    <span class="text"> {{ cause.name }} </span>
+
+  </div>
+
+
+
+</div><!-- close causes cf -->

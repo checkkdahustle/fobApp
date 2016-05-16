@@ -7,6 +7,7 @@ fobApp.controller('CausesController', ['$scope', '$rootScope', '$firebaseAuth', 
 		if (authUser) {
 			var causesRef = new Firebase(FIREBASE_URL + 'users/' + $rootScope.currentUser.$id + '/causes');
 			var causesInfo = $firebaseArray(causesRef);
+			$scope.causes = causesInfo;
 
 			$scope.addCause = function() {
 				causesInfo.$add({
