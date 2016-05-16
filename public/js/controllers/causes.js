@@ -16,8 +16,12 @@ fobApp.controller('CausesController', ['$scope', '$rootScope', '$firebaseAuth', 
 				}).then(function() {
 					$scope.causeName='';
 				}); // close Promise
-
 			}; // close 'Add Cause' function.
+
+			$scope.deleteCause = function(key) {
+				causesInfo.$remove(key);
+			}; // close 'delete Cause' function.
+
 		} // close 'User Authentication' if statement.
 	}); // close 'on Auth' Authentication function.
 

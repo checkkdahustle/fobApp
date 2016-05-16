@@ -16,6 +16,7 @@
 
   <h2>Your Causes</h2>
   <div class="cause" ng-repeat="(key, cause) in causes">
+    <button class="btn btn-delete tooltip" ng-click="deleteCause(key)"> X <span>Delete this cause</span></button> <!-- (key) index firebase hash -->
     <span class="text"> {{ cause.name }} </span>
 
   </div>
