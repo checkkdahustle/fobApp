@@ -7,10 +7,31 @@
 
 	<div class="search cf">
 		<input type="text" ng-model="query" placeholder="Search for users">
+
+		<div class="formgroup">
+			<span class="label">by: </span>
+			<select ng-model="order">
+				<option value="firstName">First Name</option>
+				<option value="lastName">Last Name</option>
+				<option value="date">Date</option>
+
+			</select>
+		</div>
+
+		<div class="formgroup">
+			<input type="radio" id="dirascending" name="direction" ng-model="direction">
+			<label for="dirascending">asc</label>&nbsp;
+
+			<input type="radio" id="dirdescending" name="direction" ng-model="direction" value="reverse">
+			<label for="dirdescending">desc</label>
+
+		</div>
+
+
 	</div>
 
 	<ul class="userlist cf">
-		<li ng-repeat="checkin in checkins | filter: query" >
+		<li ng-repeat="checkin in checkins | orderBy: order:direction | filter: query" >
 			<div class="checkin">
 				<div class="buttons" ng-show="currentUser">
 					<button class="btn btn-delete tooltip" ng-click="deleteCheckin(checkin.$id)">x
