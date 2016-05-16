@@ -9,6 +9,15 @@ fobApp.controller('CausesController', ['$scope', '$rootScope', '$firebaseAuth', 
 			var causesInfo = $firebaseArray(causesRef);
 			$scope.causes = causesInfo;
 
+			causesInfo.$loaded().then(function(data){
+				$rootScope.howManyCauses = causesInfo.length;
+			}); // making sure cause data is loaded.
+
+			causesInfo.$watch(function(data){
+				$rootScope.howManyCauses = causesInfo.length;
+			}); // watches loaded data and count to length to badge.
+
+
 			$scope.addCause = function() {
 				causesInfo.$add({
 					name: $scope.causeName,
