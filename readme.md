@@ -7,3 +7,5 @@ Routes is a way of handling different templates and connecting them to different
 Controllers handle the interaction between the data and templates.
 
 views Folder
+
+Readme is scheduled for an update.
