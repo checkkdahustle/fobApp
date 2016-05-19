@@ -175,7 +175,7 @@ input[type=radio] {
   padding: 5px 5px 5px 30px;
   font-size: .8em;
   margin: 0 auto;
-}
+} /* url(../images/icons/icon_dice.png)*/
 
 .btn-reset {
   background: #CB4B19 url(../images/icons/icon_reset.png)  5px center no-repeat;
