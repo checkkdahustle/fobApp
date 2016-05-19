@@ -24,16 +24,6 @@
 			<input type="radio" id="dirdescending" name="direction" ng-model="direction" value="reverse">
 			<label for="dirdescending">desc</label>
 		</div><!-- formgroup, radio inputs -->
-<<<<<<< c10ada189fb24e9dddba28b0348294f38a0755de
-=======
-
-
-		<div ng-show="currentUser" class="buttons cf">
-
-			<button ng-hide="recordId" class="btn btn-pick" ng-click="pickRandom()"> Random Pick</button><!-- will hide when recordId has a value -->
-
-			<button ng-show="recordId" class="btn btn-pick" ng-click="recordId=''">Reset</button><!-- will show when recordId has a value -->
->>>>>>> created a pickRandom function and added recordId to userlist filter.
 
 
 		<div ng-show="currentUser" class="buttons cf">
@@ -41,10 +31,27 @@
 				Random Pick
 			</button><!-- will hide when recordId has a value -->
 
+<<<<<<< c9b1f22bb1b051e6ddbb18fa4c35b9cf7cba741e
+			<button ng-hide="recordId" class="btn btn-pick" ng-click="pickRandom()"> Random Pick</button><!-- will hide when recordId has a value -->
+
+			<button ng-show="recordId" class="btn btn-pick" ng-click="recordId=''">Reset</button><!-- will show when recordId has a value -->
+
+
+		<div ng-show="currentUser" class="buttons cf">
+			<button ng-hide="recordId" class="btn btn-pick" ng-click="pickRandom()">
+				Random Pick
+			</button><!-- will hide when recordId has a value -->
+
+=======
+			<button ng-show="recordId" class="btn btn-pick" ng-click="recordId=''">
+				Reset
+			</button><!-- will show when recordId has a value -->
+		</div><!-- Pick A Random user -->
+>>>>>>> added randomPick a user function and added commenting
 	</div><!-- Search -->
 
 	<ul class="userlist cf">
-		<li ng-repeat="checkin in checkins | orderBy: order:direction | filter: { $id: recordId, $: query }" >
+		<li ng-class="checkin.userState" ng-repeat="checkin in checkins | orderBy: order:direction | filter: { $id: recordId, $: query }" >
 			<div class="checkin">
 				<div class="buttons" ng-show="currentUser">
 					<button class="btn btn-delete tooltip" ng-click="deleteCheckin(checkin.$id)">x
