@@ -27,24 +27,27 @@
 
 
 		<div ng-show="currentUser" class="buttons cf">
+			<button ng-hide="recordId" class="btn btn-pick" ng-click="pickRandom()">
+				Random Pick
+			</button><!-- will hide when recordId has a value -->
 
-			<button ng-hide="recordId" class="btn btn-pick" ng-click="pickRandom()"> Random Pick</button><!-- will hide when recordId has a value -->
-
-			<button ng-show="recordId" class="btn btn-pick" ng-click="recordId=''">Reset</button><!-- will show when recordId has a value -->
-
-		</div>
-
-
+			<button ng-show="recordId" class="btn btn-pick" ng-click="recordId=''">
+				Reset
+			</button><!-- will show when recordId has a value -->
+		</div><!-- Pick A Random user -->	
 	</div><!-- Search -->
 
 	<ul class="userlist cf">
-		<li ng-repeat="checkin in checkins | orderBy: order:direction | filter: { $id: recordId, $: query }" >
+		<li ng-class="checkin.userState" ng-repeat="checkin in checkins | orderBy: order:direction | filter: { $id: recordId, $: query }" >
 			<div class="checkin">
 				<div class="buttons" ng-show="currentUser">
 					<button class="btn btn-delete tooltip" ng-click="deleteCheckin(checkin.$id)">x
 						<span>Delete this check-in</span>
-					</button>
-				</div><!--buttons -->
+					</button><!--delete button -->
+					<button class="btn btn-love tooltip" ng-click="showLove(checkin)">
+						<span>Show the Love</span>
+					</button><!-- ShowLove button -->
+				</div><!-- buttons -->
 
 				<div class="info">
 					<h2>{{ checkin.firstName }} {{ checkin.lastName }}</h2>
@@ -52,6 +55,13 @@
 						{{ checkin.date | date: "MMM d, yy h:mm a"}}
 					</div> <!-- date -->
 				</div><!-- info -->
+
+				<div class="showcheckins" ng-show="checkin.show">
+					<form class="cf" ng-submit="giveLove(checkin, checkin.giftText)" novalidate>
+						<input type="text" name="giftText" placeholder="What are you giving them?" ng-model="checkin.giftText" ng-required="true">
+						<button type="submit" class="btn" ng-disabled="myform.$invalid">+</button>
+					</form>
+				</div><!-- showcheckins -->
 			</div><!-- checkin  -->
 		</li>
 	</ul>
