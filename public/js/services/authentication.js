@@ -45,16 +45,17 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 						regUser: rUser.uid,
 						firstName: user.fname,
 						lastName: user.lname,
-						email: user.email
+						email: user.email,
+						causes: {}
 					}); // users and or donators info stored in DB.
 
 					thisObject.login(user);
 
 				}).catch(function (error) {
 					$rootScope.message = error.message;
-				}); // close createUser auth function
+				}); // close auth.createUser function, & promise of rUser and error handling.
 			} // close register return
-		}; // close return function
+		}; // close return method
 
 		return thisObject;
 
