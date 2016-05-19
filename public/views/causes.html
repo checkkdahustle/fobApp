@@ -12,20 +12,19 @@
     </div>
 
     <button type="submit" class="btn" ng-disabled="causeForm.$invalid">+</button>
-  </form>
+  </form><!-- Form to add cause Name -->
 
   <h2>Your Causes</h2>
   <div class="cause" ng-repeat="(key, cause) in causes">
-    <button class="btn btn-delete tooltip" ng-click="deleteCause(key)"> X <span>Delete this cause</span></button> <!-- (key) index firebase hash -->
+    <button class="btn btn-delete tooltip" ng-click="deleteCause(key)"> X <span>Delete this cause</span></button> <!-- (key) index firebase hash = Button function to delete a certain cause. -->
 
-    <a class="btn btn-checkin tooltip" ng-href= "#/checkins/{{currentUser.regUser}}/{{cause.$id}}">√<span>Go to check-in URL</span></a>
+    <!-- <pre> {{cause | json}}</pre> -->
+    <a class="btn btn-checkin tooltip" ng-href= "#/checkins/{{currentUser.regUser}}/{{cause.$id}}">√<span>Go to check-in URL</span></a><!-- Link to checkin page -->
 
-    <a class="btn btn-list tooltip" ng-href="#/checkins/{{currentUser.regUser}}/{{cause.$id}}/checkinsList">√<span>View list of checked in users</span></a>
+    <a class="btn btn-list tooltip" ng-href="#/checkins/{{currentUser.regUser}}/{{cause.$id}}/checkinsList">√<span>View list of checked in users</span></a><!-- Link to checkin List of users page -->
 
-    <span class="text"> {{cause.name}} </span>
+    <span class="text"><a ng-href="/users/{{cause.ownerID}}/">{{cause.ownerName}}</a>  {{cause.name}} </span><!-- name of user's cause and causeName, link to user profile or addition info on cause. -->
 
-  </div>
-
-
+  </div><!-- div, that holds the buttons, links, and name of user's cause and causeName-->
 
 </div><!-- close causes cf -->
