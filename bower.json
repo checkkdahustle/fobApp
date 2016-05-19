@@ -1,0 +1,29 @@
+{
+  "name": "fob",
+  "description": "Charity Application for donations.",
+  "main": "index.js",
+  "authors": [
+    "C. Cyprien (CheckkDaHustle)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "charity",
+    "donation"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules/",
+    "public/js/lib/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-route": "1.5.5",
+    "anguularfire": "1.2.0",
+    "firebase": "^2.4.2",
+    "ngprogress": "^ 1.1.2"
+  }
+}
