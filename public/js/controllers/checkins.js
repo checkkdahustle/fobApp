@@ -3,7 +3,7 @@ fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$location', '$
 	$scope.whichcause = $routeParams.mId;
 	$scope.whichuser = $routeParams.uId;
 
-	var ref = new Firebase(FIREBASE_URL + 'users/' + $scope.whichuser + '/causes/' + $scope.whichcause + '/checkins' ); //path to all the user's cause, live chat or event checkin.
+	var ref = new Firebase(FIREBASE_URL + '/causes/' + $scope.whichcause + '/volunteers' ); //path to all the user's cause, live chat or event checkin.
 	// var ref = new Firebase(FIREBASE_URL + 'causes/' + $scope.whichcause + '/checkins' );
 
 	var checkinsList = $firebaseArray(ref);
@@ -32,6 +32,21 @@ fobApp.controller('CheckinsController', ['$scope', '$rootScope', '$location', '$
 		var refDel = new Firebase(FIREBASE_URL + 'users/' + $scope.whichuser + '/causes/' + $scope.whichcause + '/checkins/' + id);
 		var record = $firebaseObject(refDel);
 		record.$remove(id);
+
+		var checkinsInfo = $firebaseArray(ref);
+		var myData = {
+			firstName: $scope.user.fname,
+			lastName: $scope.user.lname,
+			email: $scope.user.email,
+			date: Firebase.ServerValue.TIMESTAMP
+		}; // close 'myData' varaible of users info.
+
+		checkinsInfo.$remove(myData).then(function() {
+			$location.path('/checkins/' + $scope.whichuser + '/' + $scope.whichcause + '/checkinsList');
+		});
+
+
+
 	};// deleteCheckin
 
 	$scope.pickRandom = function() {

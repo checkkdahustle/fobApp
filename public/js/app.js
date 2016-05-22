@@ -20,6 +20,10 @@ fobApp.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: 'views/register.html',
 			controller: 'RegistrationController'
 		}).
+		when('/users/:uId/', {
+			templateUrl: 'views/profile.html',
+			controller: 'ProfileController'
+		}).
 		when('/checkins/:uId/:mId', {
 			templateUrl: 'views/checkins.html',
 			controller: 'CheckinsController'

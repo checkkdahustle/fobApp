@@ -16,16 +16,16 @@ cause owner ID - 'firebase/cause/' + firebasedata.key + '/owner'
 /*
 
 
-$routeProvider.when('/users/:userID', {
+√ $routeProvider.when('/users/:userID', {
 
-	templateUrl: 'yourView.html',
-	controller: yourCtrl
+√	templateUrl: 'yourView.html',
+√	controller: yourCtrl
 })
 
 in yourCtrl >
-$routeParams into the controller($scope, etc, etc)
+√ $routeParams into the controller($scope, etc, etc)
 
-firebaseURL = blah/users/$routeParams.userID
+√ firebaseURL = blah/users/$routeParams.userID
 
 now you have his info
 

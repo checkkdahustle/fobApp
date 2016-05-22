@@ -1,6 +1,15 @@
-<div class="branding"><a ng-href="#/">homepage</a></div>
+<div>
+  <a ng-href="#/">
+    <div class="branding"></div>
+  </a>
+</div>
+
 <ul>
-  <li><a ng-show="currentUser" ng-href="#/causes">Causes<span ng-show="howManyCauses" class="badge"> {{howManyCauses}} </span></a></li>
+  <li>
+    <a ng-show="currentUser" ng-href="#/causes">Causes
+      <span ng-show="howManyCauses" class="badge"> {{howManyCauses}} </span>
+    </a>
+  </li>
   <li><a ng-hide="currentUser" ng-href="#/login">Login</a></li>
   <li><a ng-hide="currentUser" ng-href="#/register">Register</a></li>
 </ul>
