@@ -226,20 +226,20 @@ input[type=radio] {
 .btn .btn-right { float: right; }
 .btn:hover { background-color: #DC322F; }
 
-.btn-list {  }/*background-image: url(../images/icons/icon_list.png);*/
-.btn-checkin { background-color: #859835; }/*background-image: url(../images/icons/icon_checkmark.png); */
-.btn-delete { background-color: #C94C24;} /*background-image: url(../images/icons/icon_trash.png);  */
-.btn-love {  } /*background-image: url(../images/icons/icon_heart.png); */
+.btn-list { background-image: url(./images/icons/icon_list.png); }/**/
+.btn-checkin { background-color: #859835; background-image: url(./images/icons/icon_checkmark.png);}/* */
+.btn-delete { background-color: #C94C24; background-image: url(./images/icons/icon_trash.png); } /* */
+.btn-love { background-image: url(./images/icons/icon_heart.png); } /* */
 .btn-email { background-image: url(../images/icons/icon_email.png); }
 .btn-cause { background-image:  url(../images/icons/icon_meeting.png); }
 
 .btn-pick {
-  background: #2D8BCF  5px center no-repeat;
+  background: #2D8BCF  5px center url(./images/icons/icon_dice.png) no-repeat;
   background-size: 20px 20px;
   padding: 5px 5px 5px 30px;
   font-size: .8em;
   margin: 0 auto;
-} /* url(../images/icons/icon_dice.png)*/
+} /* */
 
 .btn-reset {
   background: #CB4B19 url(../images/icons/icon_reset.png)  5px center no-repeat;
@@ -446,6 +446,12 @@ nav {
 .branding {
   float: left;
   margin: 20px;
+  background-image: url(./images/icons/fob_logo.png);
+  background-repeat: no-repeat;
+  background-size: 116px;
+  width: 119px;
+  min-height: 76px;
+
 }
 
 .branding a {
@@ -455,6 +461,7 @@ nav {
   color: #1B7998;
   text-decoration: none;
   text-align: left;
+
 }
 
 .branding a:hover {

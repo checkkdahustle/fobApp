@@ -1,9 +1,16 @@
-<div class="card causes cf">
 
+<div class="card causes cf">
+  <div
+    class="fb-like"
+    data-share="true"
+    data-width="450"
+    data-show-faces="true">
+  </div>
   <div class="textintro">
     <h1>Add a Cause</h1>
     <p> Type a name of Cause and hit +   </p>
   </div><!-- textintro -->
+
 
   <form class="formgroup addcause cf" name="causeForm" ng-submit="addCause()" novalidate>
 
@@ -16,12 +23,12 @@
 
   <h2>Your Causes</h2>
   <div class="cause" ng-repeat="(key, cause) in causes">
-    <button class="btn btn-delete tooltip" ng-click="deleteCause(key)"> X <span>Delete this cause</span></button> <!-- (key) index firebase hash = Button function to delete a certain cause. -->
+    <button class="btn btn-delete tooltip" ng-click="deleteCause(key)"> <span>Delete this cause</span></button> <!-- (key) index firebase hash = Button function to delete a certain cause. -->
 
     <!-- <pre> {{cause | json}}</pre> -->
-    <a class="btn btn-checkin tooltip" ng-href= "#/checkins/{{currentUser.regUser}}/{{cause.$id}}">√<span>Go to check-in URL</span></a><!-- Link to checkin page -->
+    <a class="btn btn-checkin tooltip" ng-href= "#/checkins/{{currentUser.regUser}}/{{cause.$id}}"><span>volunteers check-in</span></a><!-- Link to checkin page -->
 
-    <a class="btn btn-list tooltip" ng-href="#/checkins/{{currentUser.regUser}}/{{cause.$id}}/checkinsList">√<span>View list of checked in users</span></a><!-- Link to checkin List of users page -->
+    <a class="btn btn-list tooltip" ng-href="#/checkins/{{currentUser.regUser}}/{{cause.$id}}/checkinsList"><span>View list of checked in volunteers</span></a><!-- Link to checkin List of users page -->
 
     <span class="text"><a ng-href="/users/{{cause.ownerID}}/">{{cause.ownerName}}</a>  {{cause.name}} </span><!-- name of user's cause and causeName, link to user profile or addition info on cause. -->
 
