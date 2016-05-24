@@ -5,7 +5,8 @@
     data-share="true"
     data-width="450"
     data-show-faces="true">
-  </div>
+  </div><!-- facebook like and share -->
+
   <div class="textintro">
     <h1>Add a Cause</h1>
     <p> Type a name of Cause and hit +   </p>
@@ -13,11 +14,9 @@
 
 
   <form class="formgroup addcause cf" name="causeForm" ng-submit="addCause()" novalidate>
-
     <div class="inputwrapper">
       <input type="text" name="causeName" placeholder="Cause name" ng-model="causeName" ng-required="true">
     </div>
-
     <button type="submit" class="btn" ng-disabled="causeForm.$invalid">+</button>
   </form><!-- Form to add cause Name -->
 
