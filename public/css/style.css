@@ -590,3 +590,18 @@ img {
     width: 47%;
     margin: 0 auto;
 }
+
+
+.featBox {
+  width: 100%;
+  border: 1px #fff solid;
+
+}
+
+.featBox section{
+  width: 30.3%;
+    min-height: 200px;
+    display: inline-block;
+    border: 1px red solid; float: left; */
+
+}
