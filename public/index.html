@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <title>FOB App</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
+  <!-- theme from bootstrap -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-fUMURLTdEcpeYHly3PAwggI3l2UvdHNg/I+8LRph7hLDcAZm77YfDx3Tjum9d3vK" crossorigin="anonymous"> -->
 
   <!-- Style Sheets -->
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="js/lib/bower_components/bootstrap/dist/css/bootstrap.css"> -->
   <link rel="stylesheet" href="css/style.css"/>
-  <link rel="stylesheet" href="css/ngProgress.css"/>
+  <!-- <link rel="stylesheet" href="css/ngProgress.css"/> -->
+
+
 
   <!-- Angular Libraries: Angular, Angular Route, Angular Animate  -->
   <script src="js/lib/bower_components/angular/angular.min.js" charset="utf-8"></script>
@@ -26,8 +30,14 @@
   <script src="js/app.js" charset="utf-8"></script>
   <script src="js/services/authentication.js" charset="utf-8"></script>
   <script src="js/controllers/registration.js" charset="utf-8"></script>
+  <script src="js/controllers/home.js" charset="utf-8"></script>
   <script src="js/controllers/causes.js" charset="utf-8"></script>
   <script src="js/controllers/checkins.js" charset="utf-8"></script>
+
+  <!-- Bootstrap  -->
+  <!-- <script src="js/lib/bower_components/jquery/dist/jquery.js"></script> -->
+  <script src="js/lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>
 
 </head>
 
@@ -52,7 +62,6 @@
 
   <header>
     <nav class="cf" ng-include="'views/nav.html'"></nav>
-
   </header>
 
   <div class="page">
