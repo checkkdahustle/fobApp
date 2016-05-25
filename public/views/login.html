@@ -1,30 +1,33 @@
-<section class="card login">
+
   <form name="myform" ng-submit="login()" novalidate>
 
     <div class="textintro">
-      <h1>Hi there!</h1>
-      <p>Log-in to access the awesomeness!</p>
+      <h1>Log In and Make a difference!</h1>
+      <p>Log-in to access the great causes!</p>
       <p class="message" ng-show="message"> {{ message }}</p>
 
      <!-- green for valid, red x for invalid -->
        <!-- <p>{{ myform.email.$valid }}</p> -->
     </div>
 
-    <fieldset>
-
+    <div class="form-group">
       <!-- input email -->
-      <input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+      <label for="InputEmail">Email</label>
+      <input type="email" class="form-control" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
       <!-- Valid and require email -->
       <p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched"> Must be a valid email </p>
+    </div>
 
+    <div class="form-group">
       <!-- input password -->
-      <input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
+      <label for="InputPassword">Password</label>
+      <input type="password" class="form-control" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
       <!-- Valid and require password -->
       <p class="error validationerror" ng-show="myform.password.$invalid && myform.password.$touched"> Password is Reequired </p>
-    </fieldset>
+    </div>
+
 
     <!-- Disable button if invalid -->
-    <button type="submit" class="btn" ng-disabled="myform.$invalid">Login</button>
+    <button type="submit" class="btn btn-primary" ng-disabled="myform.$invalid">Login</button>
     <p>or <a ng-href="#/register">register</a></p>
   </form>
-</section>
