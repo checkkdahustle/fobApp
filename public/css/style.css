@@ -1,163 +1,3 @@
-/* apply a natural box layout model to all elements, but allowing components to change */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/* Base Styles */
-
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
-
-.cf:after {
-  clear: both;
-}
-
-html {
-  background-color: #F7F7F7;
-  min-height: 100%;
-  height: auto;
-}
-
-body  {
-  font-family: 'Helvetica Nueue', Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  line-height: 160%;
-  color: #555459;
-  line-height: 1.5rem;
-  *zoom: 1;
-}
-
-/* .card {
-background: white;
-width: 100%;
-max-width: 850px;
-margin-left: auto;
-margin-right: auto;
-padding: 10px 40px;
-text-align: center;
-position: relative;
-opacity: .95;
-border-radius: 4px;
-border: 1px solid #e8e8e8;
-box-shadow: 0 1px 0 rgba(0,0,0,.25);
-} */
-
-@media all and (max-width: 400px) {
-  main {
-    width: 100%;
-  }
-}
-
-
-a {
-  color: #2D8BCF;
-  font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
-}
-
-header {
-  margin-bottom: 20px;
-}
-
-h1{
-  font-size: 2.2rem;
-  font-weight: 400;
-  line-height: 100%;
-  margin-bottom: 10px;
-  padding-top: 10px;
-  font-weight: 700;
-  font-family: Lato,appleLogo,sans-serif;
-  margin: 0 0 1rem;
-}
-
-h2{
-  font-weight: 100;
-  font-size: 1.5rem;
-  line-height: 90%;
-  margin-bottom: 5px;
-  margin-top: 10px;
-  font-family: serif;
-  text-shadow: 1px 1px rgb(255,255,255, 1);
-}
-
-h3{
-  margin-top: 0;
-  line-height: 110%;
-  margin-bottom: 5px;
-}
-
-
-a.small {
-  line-height: 100%;
-  font-size: .9rem;
-}
-
-/* Form Styles */
-
-input {
-  width: 100%;
-  display: inline-block;
-  font-weight: 100;
-  padding: 15px;
-  margin: 5px 0;
-  font-size: 1rem;
-  font-weight: 100;
-  color: #475B62;
-  border: 1px solid #C5C5C5;
-  border-radius: 4px;
-  outline: 0;
-}
-
-input[type=radio] {
-  width: auto;
-}
-
-
-.ng-enter.ng-enter-active,
-.ng-leave {
-  opacity: 1;
-  height: 80px;
-  overflow: hidden;
-}
-
-.ng-leave.ng-leave-active,
-.ng-enter {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 24px;
-  margin-bottom: 0;
-  font-size: 1.3rem;
-  font-size: 400;
-  line-height: 140%;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background: #C61C6F;
-  color: white;
-  background-color: #2D8BCF;
-  background-size: 18px 18px;
-  min-width: 28px;
-  min-height: 28px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  user-select: none;
-}
-
-
 .btn .btn-left { float: left; }
 .btn .btn-right { float: right; }
 .btn:hover { background-color: #DC322F; }
@@ -373,11 +213,7 @@ ul.awardslist li .award {
   padding-right: 15px;
 }
 
-nav {
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 1px 1px rgba(0,0,0,.1);
-}
+
 
 .branding {
   float: left;
@@ -389,55 +225,10 @@ nav {
   min-height: 85px;
 }
 
-/* .branding a {
-width: 80%;
-font-size: 1.6em;
-text-align: left;
-color: #1B7998;
-text-decoration: none;
-text-align: left;
-} */
-
-/* .branding a:hover {
-color: none;
-} */
 
 
-nav ul {
-  width: 80%;
-  float: right;
-}
 
-nav ul li {
-  list-style: none;
-  float: right;
-  color: #145266;
-  font-family: 'Helvetica Nueue', Helvetica, Arial, sans-serif;
-  margin: 10px 0;
-  font-size: 1.1em;
-}
 
-nav ul li.user {
-  background-color: #D24244;
-  color: #EFC94C;
-  font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;
-}
-
-nav ul li.user.hello {
-  margin-left: 60px;
-  padding: 10px 15px;
-}
-
-nav ul li a {
-  float: left;
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-}
-
-nav li a:hover {
-  color: #E76C5A;
-}
 
 .userinfo {
   text-align: center;
@@ -555,10 +346,7 @@ width:100%;
 .checkinslist { margin-top: 20px; }
 .checkinslist h1 { color: #2D8BCF; }
 
-/* .checkin h2 {
-margin: 0;
-padding: 0;
-} */
+
 .checkin .btn {
   padding: 0;
   margin: 0 3px;
@@ -586,23 +374,6 @@ input.ng-valid.ng-touched {
 /* Home Page - Slider images */
 
 img {
-  /*     width: 900px; */
   width: 47%;
   margin: 0 auto;
-}
-
-
-.featBox {
-  width: 100%;
-  border: 1px #fff solid;
-border-bottom: 1px solid #333;
-}
-
-.featBox section{
-  width: 30.3%;
-  min-height: 200px;
-  display: inline-block;
-  border: 1px red solid;
-  /*float: left;*/
-
 }
