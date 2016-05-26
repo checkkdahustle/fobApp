@@ -30,6 +30,12 @@ fobApp.controller('HomeController', ['$scope', '$rootScope', '$firebaseAuth', '$
 		}
 	];
 
+
+
+
+
+
+
 }]);
 
 
