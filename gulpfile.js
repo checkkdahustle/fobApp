@@ -3,16 +3,16 @@ var browserSync = require('browser-sync').create();
 var nodemon = require('gulp-nodemon');
 
 
-gulp.task('server', function () {
-	nodemon({
-		script: "server.js",
-		// watch: "public/",
-		ext: "js",
-		ignore: ["gulp*", "public*"],
-	}).on('restart', function() {
-		console.log('restarted');
-	});
-});
+// gulp.task('server', function () {
+// 	nodemon({
+// 		script: "server.js",
+// 		watch: './public',
+// 		ext: "js",
+// 		ignore: ["gulp*", "public*"],
+// 	}).on('restart', function() {
+// 		console.log('restarted');
+// 	});
+// });
 
 gulp.task('bs', function () {
 	browserSync.init({
@@ -26,6 +26,6 @@ gulp.task('bs', function () {
 
 
 
-gulp.task('default', ['server', 'bs'], function () {
+gulp.task('default', ['bs'], function () {
 		console.log('Server is ON');
 });
