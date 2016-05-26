@@ -1,36 +1,37 @@
 
-<div class="card causes cf">
-  <div
-    class="fb-like"
-    data-share="true"
-    data-width="450"
-    data-show-faces="true">
-  </div><!-- facebook like and share -->
-
   <div class="textintro">
     <h1>Add a Cause</h1>
-    <p> Type a name of Cause and hit +   </p>
+    <p> Type a name of Cause   </p>
   </div><!-- textintro -->
 
 
-  <form class="formgroup addcause cf" name="causeForm" ng-submit="addCause()" novalidate>
-    <div class="inputwrapper">
-      <input type="text" name="causeName" placeholder="Cause name" ng-model="causeName" ng-required="true">
-    </div>
-    <button type="submit" class="btn" ng-disabled="causeForm.$invalid">+</button>
+  <form class="form-inline" name="causeForm" ng-submit="addCause()" novalidate>
+
+      <input type="text" class="form-control" name="causeName" placeholder="Cause name" ng-model="causeName" ng-required="true">
+
+    <button type="submit" class="btn btn-primary" ng-disabled="causeForm.$invalid">+</button>
   </form><!-- Form to add cause Name -->
 
   <h2>Your Causes</h2>
-  <div class="cause" ng-repeat="(key, cause) in causes">
-    <button class="btn btn-delete tooltip" ng-click="deleteCause(key)"> <span>Delete this cause</span></button> <!-- (key) index firebase hash = Button function to delete a certain cause. -->
+
+  <div ng-repeat="(key, cause) in causes" class="">
+    <br/>
+    <br/>
+    <!-- <pre>
+      {{cause | json}}
+    </pre> -->
+    <br/>
+
+    <!-- <ul ng-repeat="vol in cause.volunteers">
+      <li>{{vol.email}}</li>
+    </ul> -->
+    <button class="btn btn-danger glyphicon glyphicon-trash" ng-click="deleteCause(key)" uib-tooltip="Delete {{cause.name}}"> </button> <!-- (key) index firebase hash = Button function to delete a certain cause. -->
 
     <!-- <pre> {{cause | json}}</pre> -->
-    <a class="btn btn-checkin tooltip" ng-href= "#/checkins/{{currentUser.regUser}}/{{cause.$id}}"><span>volunteers check-in</span></a><!-- Link to checkin page -->
+    <a class="btn btn-info glyphicon glyphicon-ok" ng-href= "#/checkins/{{currentUser.regUser}}/{{cause.$id}}" uib-tooltip="Volunteer Check-in for {{cause.name}}"></a><!-- Link to checkin page -->
 
-    <a class="btn btn-list tooltip" ng-href="#/checkins/{{currentUser.regUser}}/{{cause.$id}}/checkinsList"><span>View list of checked in volunteers</span></a><!-- Link to checkin List of users page -->
+    <a class="btn btn-warning glyphicon glyphicon-eye-open" ng-href="#/checkins/{{currentUser.regUser}}/{{cause.$id}}/checkinsList" uib-tooltip="View Volunteer list for {{cause.name}}"></a><!-- Link to checkin List of users page -->
 
     <span class="text"><a ng-href="/users/{{cause.ownerID}}/">{{cause.ownerName}}</a>  {{cause.name}} </span><!-- name of user's cause and causeName, link to user profile or addition info on cause. -->
 
   </div><!-- div, that holds the buttons, links, and name of user's cause and causeName-->
-
-</div><!-- close causes cf -->
