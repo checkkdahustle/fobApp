@@ -57,17 +57,17 @@ fobApp.factory('Authentication', ['$rootScope', '$firebaseAuth', '$firebaseObjec
 		} // close register return
 	}; // close return method
 
-	update: function (user) {
-		auth.$changeEmail({
-			oldEmail: "my@email.com",
-			newEmail: "other@email.com",
-			password: "mypassword"
-		}).then(function() {
-			console.log("Email changed successfully!");
-		}).catch(function(error) {
-			console.error("Error: ", error);
-		});
-	}
+	// update: function (user) {
+	// 	auth.$changeEmail({
+	// 		oldEmail: "my@email.com",
+	// 		newEmail: "other@email.com",
+	// 		password: "mypassword"
+	// 	}).then(function() {
+	// 		console.log("Email changed successfully!");
+	// 	}).catch(function(error) {
+	// 		console.error("Error: ", error);
+	// 	});
+	// }
 
 
 	return thisObject;
